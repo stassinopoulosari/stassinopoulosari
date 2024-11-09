@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HOME - evil forum</title>
+    </head>
+    <body>
+        <nav id="homepage-navBar"><a href="#"><img src="./evil-forum.svg" alt="evil forum"></a>
+        </nav>
+      <div class="content">
+        <h1>looking for something?</h1>
+        <p>The Evil Forum is currently down. Please visit <a href="https://ari-s.com/" target="_blank">my website</a> in the meantime.</p>
+        <p>-Ari</p>
+      </div>
+</body>
+<style>
+  /*
+    Colors:
+    #C14953 red
+    #383961 blue
+    #BCF8EC mint
+    #AED9E0 light blue
+    #9FA0C3 lavender
+*/
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Fira Sans", sans-serif;
+}
+
+h1,
+h2 {
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+
+#user-userContent {
+    margin-top: 1em;
+}
+
+nav {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    background-color: #bcf8ec;
+}
+
+nav > * {
+    margin-right: 1em;
+}
+
+nav a:first-child,
+nav a:first-child img {
+    height: 2.5em;
+}
+a {
+    color: #383961;
+}
+a[disabled],
+.dummy-post a {
+    color: #000;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+input {
+    padding: 0.5rem;
+    border: 0.1px solid #000;
+    border-radius: 0.5rem;
+}
+
+input[type="text"],
+input[type="url"],
+textarea,
+.textarea-placeholder {
+    padding: 0.5rem;
+    border: 0.1px solid #000;
+    border-radius: 0.5rem;
+    font-family: "Fira Code", monospace;
+    min-width: 40vw;
+}
+
+textarea,
+div.textarea-placeholder {
+    min-width: 50vw;
+    min-height: 10vh;
+}
+
+div.textarea-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    background-color: #aed9e0;
+    font-weight: bold;
+}
+
+span.spacer {
+    flex: 1;
+}
+
+.no-post-placeholder {
+    text-align: center;
+}
+.post-content {
+    margin: 1em;
+    margin-top: 0;
+    padding: 0.5em;
+    border: 0.5px solid #000;
+    background-color: rgba(159, 160, 195, 0.3);
+    border-radius: 0.5rem;
+}
+.content {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 0.5em;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5em;
+}
+
+.comment {
+    border-left: 0.5px solid #9fa0c3;
+    margin-top: 2em;
+    padding-top: 0.25em;
+    padding-left: 0.25em;
+}
+.comment-body {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.comment-children .comment {
+    border: none;
+    position: relative;
+}
+
+.comment-children .comment::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    left: -1.75em;
+    bottom: 0.5rem;
+    border-top: 0.5px solid #9fa0c3;
+    border-right: 0.5px solid #9fa0c3;
+    border-radius: 0 0.5rem 0 0;
+}
+
+.comment-children {
+    margin-left: 1.5em;
+}
+.comment-children .comment {
+    margin-top: 1em;
+}
+
+.post .post-stack {
+    display: block;
+    /* flex-direction: column; */
+}
+.post > div > a > h2 {
+    display: inline;
+    margin-right: 0.5em;
+}
+.vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1em;
+    width: 3em;
+}
+.vote-up,
+.vote-down {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.on {
+    background-color: #c14953;
+    color: #fff;
+}
+
+.user-view-comment {
+    margin-bottom: 2em;
+}
+
+.user-view-comment .comment {
+    margin-top: 0.5em;
+}
+
+.user-view-post {
+    margin-bottom: 2em;
+    padding: 0;
+}
+
+.new-comment {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    padding-top: 0;
+}
+
+.comment .new-comment {
+    /* margin-left: -4em; */
+    margin-top: 1em;
+    width: 80%;
+}
+
+#authGoogle-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forehead-success {
+    background-color: #aed9e0;
+}
+.forehead-failure {
+    background-color: #9fa0c3;
+}
+div#homepage-forehead {
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition:
+        top 1s ease-in-out,
+        opacity 1s ease-in-out;
+}
+#homepage-forehead.forehead-removed {
+    top: -100%;
+    pointer-events: none;
+    opacity: 0;
+}
+div#homepage-forehead h3 {
+    margin-top: 0;
+}
+div#homepage-forehead b,
+div#homepage-forehead input {
+    margin-left: 1em;
+    display: block;
+    margin-bottom: 0.5em;
+}
+div#homepage-forehead *:last-child {
+    margin-bottom: 0;
+}
+
+.dummy-post {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    opacity: 0.75;
+    background-color: #aed9e0;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</html>
