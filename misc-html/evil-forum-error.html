@@ -14,7 +14,7 @@
       </div>
 </body>
 <style>
-  /*
+/*
     Colors:
     #C14953 red
     #383961 blue
@@ -22,13 +22,17 @@
     #AED9E0 light blue
     #9FA0C3 lavender
 */
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    box-sizing: border-box;
+}
 
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family: "Fira Sans", sans-serif;
+    font-family: "Public Sans", sans-serif;
 }
 
 h1,
@@ -102,6 +106,18 @@ input[type="submit"] {
 
 span.spacer {
     flex: 1;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    cursor: pointer;
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled {
+    cursor: not-allowed;
 }
 
 .no-post-placeholder {
@@ -192,12 +208,13 @@ label {
 .vote-up,
 .vote-down {
     background: none;
-    border: none;
+    border: 0.1px dashed #444;
     cursor: pointer;
 }
 .on {
     background-color: #c14953;
     color: #fff;
+    border: none;
 }
 
 .user-view-comment {
@@ -276,5 +293,6 @@ div#homepage-forehead *:last-child {
 .hidden {
     display: none;
 }
+
 </style>
 </html>
